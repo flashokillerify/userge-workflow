@@ -41,7 +41,7 @@ jobs:
          continue-on-error: true
          run: |
            cd userge
-           pip install git+git://github.com/docker/compose.git@master
+           pip3 install wheel git+git://github.com/docker/compose.git@master
        - name: running Docker
          timeout-minutes: 340
          continue-on-error: true
