@@ -37,7 +37,7 @@ jobs:
            catch wait result
            interact"
        - name: Running Userge
-        timeout-minutes: 350
+         timeout-minutes: 350
          continue-on-error: true
          run: |
            cd userge
