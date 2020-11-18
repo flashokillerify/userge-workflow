@@ -22,7 +22,7 @@ jobs:
            git config --global user.email "manofuranium@gmail.com"         
            sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php*
            sudo -E apt-get clean 
-           sudo apt install expect -y
+           sudo apt install expect python3 -y
            
        - name: cloning repo
          continue-on-error: true
@@ -39,7 +39,6 @@ jobs:
        - name: compilation
          continue-on-error: true
          run: |
-           ls
            cd userge
            pip install docker-compose
        - name: running Docker
