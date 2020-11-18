@@ -41,8 +41,7 @@ jobs:
          run: |
            ls
            cd userge
-           docker container prune --force
-           pip3 install docker-compose
+           pip install docker-compose
        - name: running Docker
          timeout-minutes: 340
          continue-on-error: true
