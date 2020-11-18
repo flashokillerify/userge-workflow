@@ -22,8 +22,7 @@ jobs:
            git config --global user.email "manofuranium@gmail.com"         
            sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php*
            sudo -E apt-get clean 
-           sudo apt install expect python3 -y
-           echo "alias python='python3'" >> .bashrc
+           sudo apt install expect -y
 
        - name: cloning repo
          continue-on-error: true
@@ -37,15 +36,10 @@ jobs:
            set timeout -1
            catch wait result
            interact"
-       - name: compilation
+       - name: Running Userge
          continue-on-error: true
          run: |
            cd userge
-           pip3 install wheel git+git://github.com/docker/compose.git@master
-       - name: running Docker
-         timeout-minutes: 340
-         continue-on-error: true
-         run: |
            docker-compose up -d
            docker-compose logs -f
        - name: Loop workflow
